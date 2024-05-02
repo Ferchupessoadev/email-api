@@ -1,0 +1,3 @@
+ErrorDocument 403 /403.php
+RedirectMatch 403 composer.json
+RedirectMatch 403 composer.lock

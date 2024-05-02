@@ -1,0 +1,3 @@
+DirectoryIndex index.php
+ErrorDocument 403 /403.php
+RedirectMatch 403 env.php

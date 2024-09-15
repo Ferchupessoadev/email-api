@@ -1,3 +1,0 @@
-# Denegar el acceso a la carpeta vendor y todas sus subcarpetas y archivos
-ErrorDocument 403 /403.php
-RedirectMatch 403 /vendor/.*$

@@ -35,6 +35,13 @@ class Route
         $uri = trim($uri, '/');
         $uri = explode('?', $uri)[0];
 
+        // validate method
+        if (!isset(self::$routes[$method])) {
+            http_response_code(405);
+            self::Response(['message' => 'Method Not Allowed']);
+            return;
+        }
+
         foreach (self::$routes[$method] as $route => $callback) {
             if (strpos($uri, '{')) {
                 $pattern = '#^' . preg_replace('/\{[a-zA-Z0-9_]+\}/', '([a-zA-Z0-9_]+)', $uri) . '$#';
@@ -64,6 +71,6 @@ class Route
         }
 
         http_response_code(404);
-        echo '404 Not Found';
+        self::Response(['message' => '404 - Not Found']);
     }
 }

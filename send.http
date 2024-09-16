@@ -3,9 +3,9 @@ POST http://localhost:3000 HTTP/1.1
 Content-Type: application/json
 
 {
-	"to": "lxponti@gmail.com",
-	"subject": "che tiene galletas?",
-	"message": "soy un robot."
+	"to": "example@gmail.com",
+	"subject": "example subject",
+	"message": "example message."
 }
 
 ###

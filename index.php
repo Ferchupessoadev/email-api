@@ -2,16 +2,15 @@
 
 require 'vendor/autoload.php';
 
+use App\Controllers\Home;
+use App\Controllers\SendEmailController;
+use Dotenv\Dotenv;
 use lib\Route;
 
-ini_set('display_errors', 1);
+Dotenv::createImmutable(__DIR__)->load();
 
-Route::get('/', function () {
-    echo 'Hello World';
-});
+Route::get('/', [Home::class, 'index']);
 
-Route::get('/about', function () {
-    echo 'About';
-});
+Route::post('/', [SendEmailController::class, 'index']);
 
 Route::start();

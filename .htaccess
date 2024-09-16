@@ -1,3 +1,13 @@
-ErrorDocument 403 /403.php
-RedirectMatch 403 composer.json
-RedirectMatch 403 composer.lock
+RewriteEngine On
+
+# Devolver un error 404 para el archivo .env
+RewriteCond %{REQUEST_URI} ^/\.env$
+RewriteRule ^ - [R=404,L]
+
+# Devolver un error 404 para la carpeta vendor
+RewriteCond %{REQUEST_URI} ^/vendor/
+RewriteRule ^ - [R=404,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]

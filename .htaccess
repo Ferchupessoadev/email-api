@@ -8,6 +8,14 @@ RewriteRule ^ - [R=404,L]
 RewriteCond %{REQUEST_URI} ^/vendor/
 RewriteRule ^ - [R=404,L]
 
+# Devolver un error 404 para el archivo composer.json
+RewriteCond %{REQUEST_URI} ^/composer\.json$
+RewriteRule ^ - [R=404,L]
+
+# Devolver un error 404 para el archivo composer.lock
+RewriteCond %{REQUEST_URI} ^/composer\.lock$
+RewriteRule ^ - [R=404,L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php [QSA,L]

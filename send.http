@@ -1,11 +1,12 @@
 ###
-POST http://localhost:3000 HTTP/1.1
+
+POST http://localhost:3000/uniontkd HTTP/1.1
 Content-Type: application/json
 
 {
 	"to": "example@gmail.com",
-	"subject": "example subject",
-	"message": "example message."
+	"subject": "<h1>Ja, hackeado por taekwondista</h1>",
+	"message": "<p>uy, me trolio el programador</p>"
 }
 
 ###

@@ -13,4 +13,6 @@ Route::get('/', [Home::class, 'index']);
 
 Route::post('/', [SendEmailController::class, 'index']);
 
+Route::post('/uniontkd', [SendEmailController::class, 'uniontkd']);
+
 Route::start();

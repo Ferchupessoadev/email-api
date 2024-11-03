@@ -11,11 +11,17 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 header_remove('X-Powered-By');
 
 // Cors
-header('Access-Control-Allow-Origin: https://ferchudev.com, https://uniontkd.com.ar');
-header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type, Authorization');
+$allowed_origins = [
+    'https://ferchudev.com',
+    'https://uniontkd.com.ar'
+];
 
-if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-    http_response_code(200);
-    exit;
+// Obtener el origen de la solicitud
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+
+// Verificar si el origen está en la lista permitida
+if (in_array($origin, $allowed_origins)) {
+    header("Access-Control-Allow-Origin: $origin");
+    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+    header('Access-Control-Allow-Headers: Content-Type, Authorization');
 }

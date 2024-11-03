@@ -11,7 +11,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 header_remove('X-Powered-By');
 
 // Cors
-header('Access-Control-Allow-Origin: https://ferchudev.com');
+header('Access-Control-Allow-Origin: https://ferchudev.com, https://uniontkd.com.ar');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Authorization');
 

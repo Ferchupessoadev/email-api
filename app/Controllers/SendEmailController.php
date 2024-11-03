@@ -47,7 +47,7 @@ class SendEmailController extends Controller
     public function uniontkd(): array
     {
         [$to, $subject, $message] = $this->getBody();
-        $response = $this->send($to, $subject, $message, 'uniontkd.com.ar', 'lcponti@gmail.com');
+        $response = $this->send($to, $subject, $message, 'uniontkd.com.ar', 'uniontkdargentina@gmail.com');
         return $response;
     }
 

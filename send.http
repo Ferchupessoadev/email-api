@@ -5,8 +5,8 @@ Content-Type: application/json
 
 {
 	"to": "example@gmail.com",
-	"subject": "<h1>Ja, hackeado por taekwondista</h1>",
-	"message": "<p>uy, me trolio el programador</p>"
+	"subject": "<h1>Hola</h1>",
+	"message": "<p>Prueba desde la API</p>"
 }
 
 ###
